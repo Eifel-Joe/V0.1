@@ -1,0 +1,20 @@
+    {% if chamber >= 45 %}
+      #### Auswahl über Druckzeit und Bauraumtemperatur ob Heatsoak gemacht wird
+      {% if time > 25 %}
+        M117 Preheat Chamber
+        {% set m = namespace(value=20) %}
+        {% for i in range(20) %}
+            {% if printer["temperature_sensor Chamber"].temperature >= 45 %}
+              {% set i = 20 %}
+            {% else %}
+              {% set m.value = m.value - 1 %}
+              M117 Preheat Chamber {m.value} Minutes
+              G4 P60000
+              M117 Preheating
+            {% endif %}
+        {% endfor %}
+      {% else %}
+        M118 No Heatsoak, short print
+      {% endif %}
+    {% endif %}
+    #### Heatsoak vorbei oder eben nicht durchgeführt
