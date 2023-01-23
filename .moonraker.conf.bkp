@@ -21,6 +21,10 @@ cors_domains =
 	https://app.fluidd.xyz
 	http://app.fluidd.xyz
 
+[announcements]
+subscriptions = 
+	mainsail
+
 [database]
 
 [file_manager]
@@ -33,6 +37,7 @@ enable_object_processing = True
 [update_manager]
 channel = dev
 refresh_interval = 168
+enable_auto_refresh = True
 
 [update_manager mainsail]
 type = web
