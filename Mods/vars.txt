@@ -1,5 +1,5 @@
 [Variables]
 sheet = 0
-time = 81
-user_offset = -0.03
+time = 82
+user_offset = -0.06
 
