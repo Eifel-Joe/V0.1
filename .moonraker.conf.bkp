@@ -32,6 +32,10 @@ enable_object_processing = True
 
 [octoprint_compat]
 
+[spoolman]
+server = http://10.25.40.60:7891
+sync_rate = 5
+
 [history]
 
 [update_manager]
